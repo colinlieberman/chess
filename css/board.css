@@ -1,0 +1,45 @@
+board {
+  display: table;
+  border: 2px solid #563e25;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+row {
+  display: table-row;
+  margin: 0;
+  padding: 0;
+}
+
+row label {
+  position: relative;
+  left: -16px;
+  display: block;
+  width: 0px;
+  vertical-align: middle;
+  line-height: 48px;
+}
+
+square {
+  display: table-cell;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+square.black {
+  background-color: #294c2e;
+}
+
+#file-labels {
+  display: table;
+  margin: 0px auto;
+}
+
+#file-labels label {
+  display: inline-block;
+  width: 48px;
+  text-align: center;
+}
