@@ -8,6 +8,19 @@ piece {
   vertical-align: middle;
   position: relative;
   z-index: 10;
+  border: 2px solid #fff;
+}
+
+square.black piece {
+  border-color: #adcab1;
+}
+
+board[state="SELECT_PIECE"] piece.active {
+  cursor: -webkit-grab;
+}
+
+board square piece.selected {
+  border-color: #bd83c1;
 }
 
 piece[player="white"]:after {
