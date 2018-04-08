@@ -6,4 +6,42 @@ piece {
   font-size: 40px;
   text-align: center;
   vertical-align: middle;
+  position: relative;
+  z-index: 10;
+}
+
+piece[player="white"]:after {
+  color: #fff;
+  position: absolute;
+  z-index: -1;
+}
+
+piece[player="white"][type="pawn"]::after {
+  content: "\265F";
+  left: 4px ;
+}
+
+piece[player="white"][type="rook"]::after {
+  content: "\265C";
+  left: 4px ;
+}
+
+piece[player="white"][type="knight"]::after {
+  content: "\265E";
+  left: 4px ;
+}
+
+piece[player="white"][type="bishop"]::after {
+  content: "\265D";
+  left: 4px ;
+}
+
+piece[player="white"][type="queen"]::after {
+  content: "\265B";
+  left: 4px ;
+}
+
+piece[player="white"][type="king"]::after {
+  content: "\265A";
+  left: 4px ;
 }
