@@ -55,7 +55,7 @@ class Board {
       },
       black: {
         8: {a: 'r', b: 'n', c: 'b', d: 'q', e: 'k', f: 'b', g: 'n', h: 'r'},
-        7: {b: 'p', b: 'p', c: 'p', d: 'p', e: 'p', f: 'p', g: 'p', h: 'p'}
+        7: {a: 'p', b: 'p', c: 'p', d: 'p', e: 'p', f: 'p', g: 'p', h: 'p'}
       }
     };
   };
