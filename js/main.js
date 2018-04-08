@@ -1,2 +1,4 @@
 /* declare UCP namespace */
-var UCP = {};
+var UCP = {
+  board: null
+};
