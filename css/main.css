@@ -6,3 +6,26 @@ game {
   display: block;
   width: 100%;
 }
+
+tools {
+  display: block;
+  width: 384px;
+  margin: 12px auto;
+  padding: 8px;
+  border: 1px #294c2e solid;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+tool {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  border: 1px #294c2e solid;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #fff;
+  line-height: 32px;
+  vertical-align: middle;
+  text-align: center;
+}
