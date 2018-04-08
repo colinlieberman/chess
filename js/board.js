@@ -1,6 +1,11 @@
 class Board {
   /* position is hash of pieces by color and position */
-    constructor(position) {
+  constructor(position) {
+    this.init_squares(position);
+    this.set_position(position);
+  }
+
+  init_squares(position) {
     this.squares = {};
     var files = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
     for(var row = 1; row <= 8; row++) {
@@ -9,6 +14,9 @@ class Board {
         this.squares[row][files[i]] = null;
       }
     }
+  }
+
+  set_position(position) {
     if(!position) {
       position = this.default_position();
     }
@@ -26,7 +34,7 @@ class Board {
         }
       }
     }
-  };
+  }
 
   rotate() {
     var board = $('board');
