@@ -1,5 +1,7 @@
 class Piece {
   constructor(color) {
+    this.row  = '';
+    this.file = '';
     this.node = $("<piece></piece>");
     this.node.attr('player', color);
     var that = this;
@@ -33,6 +35,8 @@ class Piece {
   }
 
   place_on(id) {
+    this.row  = parseInt(id.substr(1));
+    this.file = id.substr(0,1);
     this.position = id;
     this.node.text(this.symbol);
     $('#' + id).append(this.node);
@@ -47,20 +51,39 @@ class Piece {
   }
 
   handle_click(e) {
+    $('piece.selected').removeClass('selected');
     var state = UCP.session.state;
     switch(state) {
       case 'SELECT_PIECE':
-        if(this.is_own_piece()) {
+        if(this.is_own_piece() && this.can_move()) {
           this.pick_up();
           UCP.session.advance_state();
         }
         break;
 
       case 'PLACE_PIECE':
-        if(this.is_own_piece()) {
-          $('piece.selected').removeClass('selected');
-          this.pick_up();
+        if(this.is_own_piece) {
+          if(this.can_move()) {
+            this.pick_up();
+          }
+          else {
+            UCP.session.retreat_state();
+          }
         }
+        break;
     }
+  }
+
+  type() {
+    this.node.attr('type');
+  }
+
+  file_index() {
+    var file_ascii = this.file.charCodeAt(0);
+    return file_ascii - 97; /* 97 is 'a' */
+  }
+
+  empty_or_enemy(piece) {
+    return !(piece && piece.player == this.player);
   }
 };

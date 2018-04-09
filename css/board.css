@@ -30,10 +30,6 @@ square {
   background-color: #fff;
 }
 
-board[state="PLACE_PIECE"] {
-  cursor: pointer;
-}
-
 square.black {
   background-color: #adcab1;
 }

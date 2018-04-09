@@ -43,6 +43,22 @@ class Game {
     $('board').attr('state', this.state);
   }
 
+  retreat_state() {
+    if(this.state == 'SELECT_PIECE') {
+      throw "cannot retreat state from piece selection";
+    }
+    var max_state = this.states.length - 1;
+    for(var i in this.states) {
+      if(i != max_state) {
+        if(this.state == this.states[i]) {
+          this.state = this.states[parseInt(i)-1]; /* i is string "0" for some reason */
+          break;
+        }
+      }
+    }
+    $('board').attr('state', this.state);
+  }
+
   identify_pieces() {
     for(var row_num in this.board.squares) {
       var row = this.board.squares[row_num];
